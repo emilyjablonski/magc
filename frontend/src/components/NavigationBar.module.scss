@@ -87,3 +87,32 @@
     height: 1.25rem;
   }
 }
+
+.navigation-item-container {
+  // position: relative;
+}
+
+.navigation-bar-dropdown {
+  position: absolute;
+  top: 4.5rem;
+  background-color: #efefef;
+  z-index: 1;
+  font-size: 0.5rem;
+  @media (min-width: $tablet-breakpoint) {
+    display: flex;
+    font-size: 0.75rem;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 0.9rem;
+  }
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-bar-dropdown-item {
+  padding: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--lightest-blue);
+  }
+}
