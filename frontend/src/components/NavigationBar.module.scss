@@ -7,11 +7,21 @@
   padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: 600;
+  width: 100vw;
 
   @media (min-width: $tablet-breakpoint) {
-    min-height: 4rem;
+    min-height: 4.5rem;
   }
+}
+
+.navigation-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-layout-width);
+  width: 100%;
 }
 
 .navigation-bar-item {
@@ -21,7 +31,20 @@
   align-items: center;
   text-align: center;
   font-size: 0.75rem;
+  cursor: pointer;
   @media (min-width: $tablet-breakpoint) {
     font-size: 1rem;
   }
+}
+
+.navigation-bar-items {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-bar-login {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--medium-blue);
+  padding-block: 0.5rem;
 }

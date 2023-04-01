@@ -29,10 +29,6 @@
   * {
     margin: 0.5rem;
   }
-  height: 5rem;
-  @media (min-width: $tablet-breakpoint) {
-    height: 10rem;
-  }
 }
 
 .news-item {
@@ -66,7 +62,7 @@
 .home-image-banner-container {
   max-width: none;
   @media (min-width: $tablet-breakpoint) {
-    max-width: 60rem;
+    max-width: var(--max-layout-width);
   }
   display: flex;
   align-items: center;
@@ -105,6 +101,6 @@
 
   max-width: none;
   @media (min-width: $tablet-breakpoint) {
-    max-width: 60rem;
+    max-width: var(--max-layout-width);
   }
 }

@@ -45,6 +45,8 @@
   --dark-gray: #3c3c3c;
 
   font-family: var(--font-mono);
+
+  --max-layout-width: 75rem;
 }
 
 @media (prefers-color-scheme: dark) {
