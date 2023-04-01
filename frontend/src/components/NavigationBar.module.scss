@@ -53,6 +53,7 @@
 .navigation-bar-right {
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 .navigation-bar-desktop {
@@ -74,6 +75,8 @@
 }
 
 .navigation-bar-mobile {
+  margin-right: 1rem;
+
   cursor: pointer;
   display: flex;
   @media (min-width: $tablet-breakpoint) {

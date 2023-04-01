@@ -53,9 +53,25 @@ export default function Home() {
             </div>
           </div>
           <div className={styles["home-content"]}>
-            "Genetic counseling is a critically important component of the appropriate use and
-            integration of genetic tests and services" Report of the Secretary's Advisory Committee
-            on Genetics, Health, and Society, 2006
+            <div className={styles["home-quote"]}>
+              <p className={styles["home-quote-text"]}>
+                "Genetic counseling is a critically important component of the appropriate use and
+                integration of genetic tests and services"
+              </p>
+              <p className={styles["home-source"]}>
+                ---- Report of the Secretary's Advisory Committee on Genetics, Health, and Society,
+                2006
+              </p>
+            </div>
+
+            <h2>What is MAGC?</h2>
+            <p>
+              Michigan genetic counselors had met as an informal group for over fifteen years. In
+              2006, the Michigan Association of Genetic Counselors, Inc. was formally incorporated.
+              In 2008, MAGC became a state chapter of the National Society of Genetic Counselors.
+              With these two important changes, MAGC is positioned to serve as the recognized,
+              leading advocate of quality genetic counseling services in Michigan.
+            </p>
             <div className={styles["news-container"]}>
               {newsPosts?.map((post) => {
                 return (
