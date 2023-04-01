@@ -4,6 +4,13 @@ import styles from "./Footer.module.scss"
 type FooterProps = {}
 
 const Footer = (props: FooterProps) => {
+  const footerLinks = [
+    "Attend Conference",
+    "Become a Member",
+    "What is a Genetic Counselor?",
+    "How Do I Become a Genetic Counselor?",
+    "Contact Us",
+  ]
   return (
     <div className={styles["footer"]}>
       <div className={styles["footer-content"]}>
@@ -20,12 +27,14 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className={styles["footer-col"]}>
           <h2>Quick Links</h2>
-          <div>
-            <div>Link 1</div>
-            <div>Link 2</div>
-            <div>Link 3</div>
-            <div>Link 4</div>
-            <div>Link 5</div>
+          <div className={styles["footer-links"]}>
+            {footerLinks.map((text) => {
+              return (
+                <a className={styles["footer-link"]} href={"/"}>
+                  {text}
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
