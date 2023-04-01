@@ -10,8 +10,10 @@
   font-weight: 600;
   width: 100vw;
 
+  padding-inline: 0;
   @media (min-width: $tablet-breakpoint) {
     min-height: 4.5rem;
+    padding-inline: 3rem;
   }
 }
 
@@ -20,7 +22,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: var(--max-layout-width);
-  width: 100%;
+  width: var(--max-layout-width);
   height: 3rem;
 }
 
@@ -48,6 +50,11 @@
 .navigation-bar-left {
   display: flex;
   align-items: center;
+  .navigation-bar-item {
+    &:first-child {
+      margin-left: -0.5rem;
+    }
+  }
 }
 
 .navigation-bar-right {
@@ -64,7 +71,6 @@
     align-items: center;
   }
   height: 2.5rem;
-  margin-right: 1rem;
   .navigation-bar-item {
     height: 2.5rem;
     &:hover {
@@ -107,6 +113,7 @@
   }
   display: flex;
   flex-direction: column;
+  margin-left: -0.5rem;
 }
 
 .navigation-bar-dropdown-item {

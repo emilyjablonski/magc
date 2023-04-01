@@ -4,29 +4,50 @@ import { GiHamburgerMenu } from "react-icons/gi"
 
 type NavigationBarProps = {}
 
-const navigationItems: Array<{ [key: string]: string[] }> = [
-  { MAGC: [] },
+type NavigationLink = {
+  title: string
+  href?: string
+}
+
+interface NavigationItem extends NavigationLink {
+  dropdownItems?: NavigationItem[]
+}
+
+const navigationItems: Array<NavigationItem> = [
+  { title: "MAGC", href: "/" },
   {
-    About: [
-      "History of MAGC",
-      "Vision & Mission",
-      "Board of Directors",
-      "Strategic Plan and Funding Efforts",
-      "Committees",
+    title: "About",
+    dropdownItems: [
+      { title: "History of MAGC", href: "/about/history" },
+      { title: "Vision & Mission" },
+      { title: "Board of Directors" },
+      { title: "Strategic Plan and Funding Efforts" },
+      { title: "Committees" },
     ],
   },
-  { "Annual Conference": ["Attend Conference", "Sponsorship Information"] },
-  { Membership: ["Membership Types & Benefits", "Become a Member", "Member Login"] },
   {
-    "About GCs": [
-      "What is a Genetic Counselor?",
-      "Prospective Students",
-      "Genetic Services in Michigan",
+    title: "Annual Conference",
+    dropdownItems: [{ title: "Attend Conference" }, { title: "Sponsorship Information" }],
+  },
+  {
+    title: "Membership",
+    dropdownItems: [
+      { title: "Membership Types & Benefits" },
+      { title: "Become a Member" },
+      { title: "Member Login" },
     ],
   },
-  { "News & Events": [] },
-  { Jobs: [] },
-  { "Contact Us": [] },
+  {
+    title: "About GCs",
+    dropdownItems: [
+      { title: "What is a Genetic Counselor?" },
+      { title: "Prospective Students" },
+      { title: "Genetic Services in Michigan" },
+    ],
+  },
+  { title: "News & Events" },
+  { title: "Jobs" },
+  { title: "Contact Us" },
 ]
 
 const NavigationBar = (props: NavigationBarProps) => {
@@ -40,8 +61,8 @@ const NavigationBar = (props: NavigationBarProps) => {
     setOpenDropdown(null)
   }
 
-  const NavItem = (props: { title: string }) => {
-    return (
+  const NavItem = (props: { title: string; href?: string }) => {
+    const item = (
       <span
         className={styles["navigation-bar-item"]}
         onMouseEnter={() => onNavItemMouseEnter(props.title)}
@@ -50,10 +71,15 @@ const NavigationBar = (props: NavigationBarProps) => {
         {props.title}
       </span>
     )
+    return <>{props.href ? <a href={props.href}>{item}</a> : item}</>
   }
 
-  const DropdownItem = (props: { title: string }) => {
-    return <span className={styles["navigation-bar-dropdown-item"]}>{props.title}</span>
+  const DropdownItem = (props: { title: string; href?: string }) => {
+    return (
+      <a href={props.href} className={styles["navigation-bar-dropdown-item"]}>
+        <span>{props.title}</span>
+      </a>
+    )
   }
 
   const DropdownMenu = (props: { parentTitle: string; children: React.ReactNode }) => {
@@ -74,15 +100,13 @@ const NavigationBar = (props: NavigationBarProps) => {
       <div className={styles["navigation-bar-content"]}>
         <div className={styles["navigation-bar-left"]}>
           {navigationItems.map((navItem) => {
-            const title = Object.keys(navItem)[0]
-
             return (
               <div className={styles["navigation-item-container"]}>
-                <NavItem title={title} />
-                {!!navItem[title].length && (
-                  <DropdownMenu parentTitle={title}>
-                    {navItem[title].map((dropdownItem) => {
-                      return <DropdownItem title={dropdownItem} />
+                <NavItem title={navItem.title} href={navItem.href} />
+                {navItem.dropdownItems && (
+                  <DropdownMenu parentTitle={navItem.title}>
+                    {navItem.dropdownItems.map((dropdownItem) => {
+                      return <DropdownItem title={dropdownItem.title} href={dropdownItem.href} />
                     })}
                   </DropdownMenu>
                 )}

@@ -1,0 +1,43 @@
+@import "variables.scss";
+
+.page-header-banner-container {
+  width: 100vw;
+  background-color: var(--lightest-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  @media (min-width: $tablet-breakpoint) {
+    padding: 2rem 3rem;
+    flex-direction: row;
+  }
+}
+
+.page-header-banner {
+  width: var(--max-layout-width);
+  max-width: var(--max-layout-width);
+
+  display: flex;
+}
+
+.page-content {
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  @media (min-width: $tablet-breakpoint) {
+    padding-block: 4rem;
+  }
+  display: flex;
+  flex-direction: column;
+
+  max-width: none;
+  @media (min-width: $tablet-breakpoint) {
+    max-width: var(--max-layout-width);
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.page-header {
+}

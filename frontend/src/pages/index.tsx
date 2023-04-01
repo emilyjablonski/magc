@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown"
 // import Image from 'next/image'
@@ -32,59 +31,51 @@ export default function Home() {
   }, [])
 
   return (
-    <>
-      <Head>
-        <title>MAGC</title>
-        <meta name="description" content="Michigan Association of Genetic Counselors, Inc (MAGC)" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout className={styles["layout"]}>
-        <main className={styles.main}>
-          <div className={styles["home-image-container"]}>
-            <div className={styles["home-image-banner-container"]}>
-              <div className={styles["home-image-banner"]}>
-                <h1 className={styles["home-image-header"]}>
-                  Michigan Association of Genetic Counselors, Inc.
-                </h1>
-              </div>
+    <Layout className={styles["layout"]}>
+      <main className={styles.main}>
+        <div className={styles["home-image-container"]}>
+          <div className={styles["home-image-banner-container"]}>
+            <div className={styles["home-image-banner"]}>
+              <h1 className={styles["home-image-header"]}>
+                Michigan Association of Genetic Counselors, Inc.
+              </h1>
             </div>
           </div>
-          <div className={styles["home-content"]}>
-            <div className={styles["home-quote"]}>
-              <p className={styles["home-quote-text"]}>
-                "Genetic counseling is a critically important component of the appropriate use and
-                integration of genetic tests and services"
-              </p>
-              <p className={styles["home-source"]}>
-                ---- Report of the Secretary's Advisory Committee on Genetics, Health, and Society,
-                2006
-              </p>
-            </div>
-
-            <h2>What is MAGC?</h2>
-            <p>
-              Michigan genetic counselors has met as an informal group for over fifteen years. In
-              2006, the Michigan Association of Genetic Counselors, Inc. was formally incorporated.
-              In 2008, MAGC became a state chapter of the National Society of Genetic Counselors.
-              With these two important changes, MAGC is positioned to serve as the recognized,
-              leading advocate of quality genetic counseling services in Michigan.
+        </div>
+        <div className={styles["page-content"]}>
+          <div className={styles["home-quote"]}>
+            <p className={styles["home-quote-text"]}>
+              "Genetic counseling is a critically important component of the appropriate use and
+              integration of genetic tests and services"
             </p>
-            <div className={styles["news-container"]}>
-              {newsPosts?.map((post) => {
-                return (
-                  <span className={styles["news-item"]}>
-                    <h2>{post.attributes.title}</h2>
-                    <p>
-                      <ReactMarkdown children={post.attributes.content} />
-                    </p>
-                  </span>
-                )
-              })}
-            </div>
+            <p className={styles["home-source"]}>
+              ---- Report of the Secretary's Advisory Committee on Genetics, Health, and Society,
+              2006
+            </p>
           </div>
-        </main>
-      </Layout>
-    </>
+
+          <h2>What is MAGC?</h2>
+          <p>
+            Michigan genetic counselors has met as an informal group for over fifteen years. In
+            2006, the Michigan Association of Genetic Counselors, Inc. was formally incorporated. In
+            2008, MAGC became a state chapter of the National Society of Genetic Counselors. With
+            these two important changes, MAGC is positioned to serve as the recognized, leading
+            advocate of quality genetic counseling services in Michigan.
+          </p>
+          <div className={styles["news-container"]}>
+            {newsPosts?.map((post) => {
+              return (
+                <span className={styles["news-item"]}>
+                  <h2>{post.attributes.title}</h2>
+                  <p>
+                    <ReactMarkdown children={post.attributes.content} />
+                  </p>
+                </span>
+              )
+            })}
+          </div>
+        </div>
+      </main>
+    </Layout>
   )
 }
