@@ -43,6 +43,8 @@
   --medium-blue: #053f67;
   --dark-blue: #04050f;
   --dark-gray: #3c3c3c;
+
+  font-family: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,9 +93,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
+  color: var(--dark-blue);
+  background: #ebebeb;
 }
 
 a {

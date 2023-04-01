@@ -4,9 +4,10 @@ import ReactMarkdown from "react-markdown"
 // import Image from 'next/image'
 import axios from "axios"
 import { Inter } from "next/font/google"
+import Layout from "../layouts/layout"
 import styles from "@/styles/index.module.scss"
 
-const inter = Inter({ subsets: ["latin"] })
+// const inter = Inter({ subsets: ["latin"] })
 
 interface NewsPost {
   title: string
@@ -40,23 +41,36 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles["home-image-container"]} />
-      <main className={styles.main}>
-        <div className={styles.grid}>
-          {newsPosts?.map((post) => {
-            return (
-              <span>
-                <h2 className={inter.className}>
-                  {post.attributes.title} <span>-&gt;</span>
-                </h2>
-                <p className={inter.className}>
-                  <ReactMarkdown children={post.attributes.content} />
-                </p>
-              </span>
-            )
-          })}
-        </div>
-      </main>
+      <Layout className={styles["layout"]}>
+        <main className={styles.main}>
+          <div className={styles["home-image-container"]}>
+            <div className={styles["home-image-banner-container"]}>
+              <div className={styles["home-image-banner"]}>
+                <h1 className={styles["home-image-header"]}>
+                  Michigan Association of Genetic Counselors, Inc.
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className={styles["home-content"]}>
+            "Genetic counseling is a critically important component of the appropriate use and
+            integration of genetic tests and services" Report of the Secretary's Advisory Committee
+            on Genetics, Health, and Society, 2006
+            <div className={styles["news-container"]}>
+              {newsPosts?.map((post) => {
+                return (
+                  <span className={styles["news-item"]}>
+                    <h2>{post.attributes.title}</h2>
+                    <p>
+                      <ReactMarkdown children={post.attributes.content} />
+                    </p>
+                  </span>
+                )
+              })}
+            </div>
+          </div>
+        </main>
+      </Layout>
     </>
   )
 }

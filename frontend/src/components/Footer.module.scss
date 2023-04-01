@@ -1,0 +1,51 @@
+@import "../styles/variables.scss";
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #ebebeb;
+  background-color: var(--medium-blue);
+  padding: 3rem 1rem;
+  @media (min-width: $tablet-breakpoint) {
+    padding: 3rem 3rem;
+    flex-direction: row;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: none;
+  @media (min-width: $tablet-breakpoint) {
+    flex-direction: row;
+    max-width: 60rem;
+  }
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  &:last-child {
+    margin-top: 3rem;
+    margin-left: 0rem;
+    align-items: start;
+    @media (min-width: $tablet-breakpoint) {
+      margin-top: 0;
+      margin-left: 3rem;
+      align-items: end;
+    }
+  }
+}
+.footer-links {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
