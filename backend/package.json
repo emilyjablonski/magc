@@ -9,12 +9,21 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4"
+  },
   "dependencies": {
     "@strapi/strapi": "4.9.0",
     "@strapi/plugin-users-permissions": "4.9.0",
     "@strapi/plugin-i18n": "4.9.0",
     "pg": "8.8.0"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 100,
+    "semi": false
   },
   "author": {
     "name": "A Strapi developer"

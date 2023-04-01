@@ -1,18 +1,18 @@
-import Head from 'next/head'
+import Head from "next/head"
 import { useEffect, useState } from "react"
 import ReactMarkdown from "react-markdown"
 // import Image from 'next/image'
 import axios from "axios"
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { Inter } from "next/font/google"
+import styles from "@/styles/index.module.scss"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] })
 
 interface NewsPost {
-title: string
-date: string
-content: string
-updatedAt: string
+  title: string
+  date: string
+  content: string
+  updatedAt: string
 }
 
 interface NewsResponse {
@@ -20,15 +20,14 @@ interface NewsResponse {
 }
 
 export default function Home() {
-
   const [newsPosts, setNewsPosts] = useState<NewsResponse[]>([])
-  console.log({newsPosts})
- 
+  console.log({ newsPosts })
+
   useEffect(() => {
     const getResult = async () => {
       const data = await axios.get("http://localhost:1337/api/news-posts")
       setNewsPosts(data.data.data)
-      return 
+      return
     }
     getResult()
   }, [])
@@ -41,24 +40,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles["home-image-container"]} />
       <main className={styles.main}>
-
         <div className={styles.grid}>
           {newsPosts?.map((post) => {
             return (
               <span>
-          
-            <h2 className={inter.className}>
-              {post.attributes.title} <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-            <ReactMarkdown children={post.attributes.content} />
-            </p>
-
-          </span>
+                <h2 className={inter.className}>
+                  {post.attributes.title} <span>-&gt;</span>
+                </h2>
+                <p className={inter.className}>
+                  <ReactMarkdown children={post.attributes.content} />
+                </p>
+              </span>
             )
           })}
-         
         </div>
       </main>
     </>
