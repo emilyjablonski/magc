@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styles from "./NavigationBar.module.scss"
-import { GiHamburgerMenu } from "react-icons/gi"
 
 type NavigationBarProps = {}
 
@@ -121,9 +120,7 @@ const NavigationBar = (props: NavigationBarProps) => {
           <div className={styles["navigation-bar-desktop"]}>
             <NavItem title={"Login"} href={"/login"} />
           </div>
-          <div className={styles["navigation-bar-mobile"]}>
-            <GiHamburgerMenu />
-          </div>
+          <div className={styles["navigation-bar-mobile"]}>+</div>
         </div>
       </div>
     </nav>
