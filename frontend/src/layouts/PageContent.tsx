@@ -1,7 +1,7 @@
 import styles from "./PageContent.module.scss"
 
 type PageContentProps = {
-  children: React.ReactNode
+  children?: React.ReactNode
   title?: string
 }
 
