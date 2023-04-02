@@ -67,4 +67,9 @@
   &:hover {
     text-decoration: underline;
   }
+  text-align: left;
+  @media (min-width: $tablet-breakpoint) {
+    align-items: flex-end;
+    text-align: right;
+  }
 }

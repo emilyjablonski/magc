@@ -5,11 +5,11 @@ type FooterProps = {}
 
 const Footer = (props: FooterProps) => {
   const footerLinks = [
-    "Attend Conference",
-    "Become a Member",
-    "What is a Genetic Counselor?",
-    "How Do I Become a Genetic Counselor?",
-    "Contact Us",
+    { title: "Attend Conference", href: "/conference/attend" },
+    { title: "Become a Member", href: "/membership/become-a-member" },
+    { title: "What is a Genetic Counselor?", href: "/about-gcs/what-is-a-gc" },
+    { title: "How Do I Become a Genetic Counselor?", href: "/about-gcs/prospective-students" },
+    { title: "Contact Us", href: "/contact" },
   ]
   return (
     <div className={styles["footer"]}>
@@ -28,10 +28,10 @@ const Footer = (props: FooterProps) => {
         <div className={styles["footer-col"]}>
           <h2>Quick Links</h2>
           <div className={styles["footer-links"]}>
-            {footerLinks.map((text, index) => {
+            {footerLinks.map((item, index) => {
               return (
-                <a className={styles["footer-link"]} href={"/"} key={index}>
-                  {text}
+                <a className={styles["footer-link"]} href={item.href} key={index}>
+                  {item.title}
                 </a>
               )
             })}
