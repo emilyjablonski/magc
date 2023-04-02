@@ -1,13 +1,13 @@
 import Head from "next/head"
 import NavigationBar from "../components/NavigationBar"
 import Footer from "../components/Footer"
+import styles from "./Navigation.module.scss"
 
-type LayoutProps = {
+type NavigationProps = {
   children: React.ReactNode
-  className: string
 }
 
-const Layout = (props: LayoutProps) => (
+const Navigation = (props: NavigationProps) => (
   <>
     <Head>
       <title>MAGC</title>
@@ -15,11 +15,11 @@ const Layout = (props: LayoutProps) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <div className={props.className}>
+    <div className={styles["layout"]}>
       <NavigationBar />
       {props.children}
       <Footer />
     </div>
   </>
 )
-export default Layout
+export default Navigation

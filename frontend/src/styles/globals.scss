@@ -100,12 +100,23 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--medium-blue);
+  text-decoration: underline;
+  &:hover {
+    background-color: var(--lightest-blue);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+ul {
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  li {
+    margin-bottom: 0.5rem;
   }
 }

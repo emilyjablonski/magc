@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import Layout from "../../layouts/layout"
-import styles from "@/styles/history.module.scss"
+import Navigation from "../../layouts/Navigation"
+import PageContent from "@/layouts/PageContent"
 
-export default function Home() {
+export default function History() {
   // useEffect(() => {
   //   const getNewsPosts = async () => {
   //     const data = await axios.get("http://localhost:1337/api/news-posts")
@@ -12,15 +12,8 @@ export default function Home() {
   // }, [])
 
   return (
-    <Layout className={styles["layout"]}>
-      <div className={styles["page-header-banner-container"]}>
-        <div className={styles["page-header-banner"]}>
-          <div className={styles["page-header"]}>
-            <h1>History of MAGC</h1>
-          </div>
-        </div>
-      </div>
-      <div className={styles["page-content"]}>
+    <Navigation>
+      <PageContent title={"History of MAGC"}>
         <p>
           Michigan genetic counselors met as an informal group, known as the Michigan Association of
           Genetic Counselors (MAGC) for over fifteen years. In the “early days,” meetings were held
@@ -59,7 +52,7 @@ export default function Home() {
           state, and licensure efforts continue to be a top priority. We are anticipating a bright
           future for MAGC and the genetic counseling community in the state of Michigan.
         </p>
-      </div>
-    </Layout>
+      </PageContent>
+    </Navigation>
   )
 }

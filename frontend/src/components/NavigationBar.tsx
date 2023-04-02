@@ -19,35 +19,38 @@ const navigationItems: Array<NavigationItem> = [
     title: "About",
     dropdownItems: [
       { title: "History of MAGC", href: "/about/history" },
-      { title: "Vision & Mission" },
+      { title: "Vision & Mission", href: "/about/vision-mission" },
       { title: "Board of Directors" },
-      { title: "Strategic Plan and Funding Efforts" },
-      { title: "Committees" },
+      { title: "Strategic Plan and Funding Efforts", href: "/about/strategic-plan" },
+      { title: "Committees", href: "/about/committees" },
     ],
   },
   {
     title: "Annual Conference",
-    dropdownItems: [{ title: "Attend Conference" }, { title: "Sponsorship Information" }],
+    dropdownItems: [
+      { title: "Attend Conference", href: "/conference/attend" },
+      { title: "Sponsorship Information", href: "/conference/sponsorship" },
+    ],
   },
   {
     title: "Membership",
     dropdownItems: [
-      { title: "Membership Types & Benefits" },
-      { title: "Become a Member" },
-      { title: "Member Login" },
+      { title: "Membership Types & Benefits", href: "/membership/types-benefits" },
+      { title: "Become a Member", href: "/membership/become-a-member" },
+      { title: "Member Login", href: "/membership/member-login" },
     ],
   },
   {
     title: "About GCs",
     dropdownItems: [
-      { title: "What is a Genetic Counselor?" },
-      { title: "Prospective Students" },
-      { title: "Genetic Services in Michigan" },
+      { title: "What is a Genetic Counselor?", href: "/about-gcs/what-is-a-gc" },
+      { title: "Prospective Students", href: "/about-gcs/prospective-students" },
+      { title: "Genetic Services in Michigan", href: "/about-gcs/services" },
     ],
   },
-  { title: "News & Events" },
-  { title: "Jobs" },
-  { title: "Contact Us" },
+  { title: "News & Events", href: "/news-events" },
+  { title: "Jobs", href: "/jobs" },
+  { title: "Contact Us", href: "/contact" },
 ]
 
 const NavigationBar = (props: NavigationBarProps) => {
@@ -116,7 +119,7 @@ const NavigationBar = (props: NavigationBarProps) => {
         </div>
         <div className={styles["navigation-bar-right"]}>
           <div className={styles["navigation-bar-desktop"]}>
-            <NavItem title={"Login"}></NavItem>
+            <NavItem title={"Login"} href={"/login"} />
           </div>
           <div className={styles["navigation-bar-mobile"]}>
             <GiHamburgerMenu />

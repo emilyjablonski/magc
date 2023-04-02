@@ -18,6 +18,13 @@
   p {
     margin-top: 1rem;
   }
+
+  a {
+    color: #efefef;
+    &:hover {
+      background-color: var(--medium-blue);
+    }
+  }
 }
 .footer-content {
   display: flex;

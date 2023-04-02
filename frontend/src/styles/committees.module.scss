@@ -1,0 +1,8 @@
+.committees-container {
+  h2 {
+    margin-top: 3rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

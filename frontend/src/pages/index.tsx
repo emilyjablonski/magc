@@ -3,7 +3,8 @@ import ReactMarkdown from "react-markdown"
 // import Image from 'next/image'
 import axios from "axios"
 import { Inter } from "next/font/google"
-import Layout from "../layouts/layout"
+import Navigation from "../layouts/Navigation"
+import PageContent from "../layouts/PageContent"
 import styles from "@/styles/index.module.scss"
 
 // const inter = Inter({ subsets: ["latin"] })
@@ -31,7 +32,7 @@ export default function Home() {
   }, [])
 
   return (
-    <Layout className={styles["layout"]}>
+    <Navigation>
       <main className={styles.main}>
         <div className={styles["home-image-container"]}>
           <div className={styles["home-image-banner-container"]}>
@@ -42,7 +43,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles["page-content"]}>
+        <PageContent>
           <div className={styles["home-quote"]}>
             <p className={styles["home-quote-text"]}>
               "Genetic counseling is a critically important component of the appropriate use and
@@ -74,8 +75,8 @@ export default function Home() {
               )
             })}
           </div>
-        </div>
+        </PageContent>
       </main>
-    </Layout>
+    </Navigation>
   )
 }
