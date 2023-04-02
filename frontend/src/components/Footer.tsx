@@ -16,9 +16,8 @@ const Footer = (props: FooterProps) => {
       <div className={styles["footer-content"]}>
         <div className={styles["footer-col"]}>
           <h2>About MAGC</h2>
-          ----
           <p>
-            Michigan genetic counselors had met as an informal group for over fifteen years. In
+            Michigan genetic counselors has met as an informal group for over fifteen years. In
             2006, the Michigan Association of Genetic Counselors, Inc. was formally incorporated. In
             2008, MAGC became a state chapter of the National Society of Genetic Counselors. With
             these two important changes, MAGC is positioned to serve as the recognized, leading

@@ -18,7 +18,7 @@ const navigationItems: Array<NavigationItem> = [
     dropdownItems: [
       { title: "History of MAGC", href: "/about/history" },
       { title: "Vision & Mission", href: "/about/vision-mission" },
-      { title: "Board of Directors" },
+      { title: "Board of Directors", href: "board" },
       { title: "Strategic Plan and Funding Efforts", href: "/about/strategic-plan" },
       { title: "Committees", href: "/about/committees" },
     ],
