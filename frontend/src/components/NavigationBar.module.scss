@@ -128,3 +128,20 @@
     background-color: var(--lightest-blue);
   }
 }
+
+.logo-link {
+  &:hover {
+    background-color: #ebebeb;
+  }
+}
+.logo {
+  width: 54px;
+  height: 42px;
+  margin-right: 1rem;
+  margin-left: 0.75rem;
+  @media (min-width: $tablet-breakpoint) {
+    margin-left: 0;
+    width: 71px;
+    height: 55px;
+  }
+}

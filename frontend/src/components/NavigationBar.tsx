@@ -13,7 +13,6 @@ interface NavigationItem extends NavigationLink {
 }
 
 const navigationItems: Array<NavigationItem> = [
-  { title: "MAGC", href: "/" },
   {
     title: "About",
     dropdownItems: [
@@ -49,7 +48,7 @@ const navigationItems: Array<NavigationItem> = [
   },
   { title: "News & Events", href: "/news-events" },
   { title: "Jobs", href: "/jobs" },
-  { title: "Contact Us", href: "/contact" },
+  { title: "Contact", href: "/contact" },
 ]
 
 const NavigationBar = (props: NavigationBarProps) => {
@@ -101,6 +100,9 @@ const NavigationBar = (props: NavigationBarProps) => {
     <nav className={styles["navigation-bar"]}>
       <div className={styles["navigation-bar-content"]}>
         <div className={styles["navigation-bar-left"]}>
+          <a href={"/"} className={styles["logo-link"]}>
+            <img src={"/magc-logo.png"} className={styles["logo"]} />
+          </a>
           {navigationItems.map((navItem, index) => {
             return (
               <div className={styles["navigation-item-container"]} key={index}>

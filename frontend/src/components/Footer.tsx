@@ -12,7 +12,7 @@ const Footer = (props: FooterProps) => {
     { title: "Contact Us", href: "/contact" },
   ]
   return (
-    <div className={styles["footer"]}>
+    <footer className={styles["footer"]}>
       <div className={styles["footer-content"]}>
         <div className={styles["footer-col"]}>
           <h2>About MAGC</h2>
@@ -38,7 +38,7 @@ const Footer = (props: FooterProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
