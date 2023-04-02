@@ -28,9 +28,9 @@ const Footer = (props: FooterProps) => {
         <div className={styles["footer-col"]}>
           <h2>Quick Links</h2>
           <div className={styles["footer-links"]}>
-            {footerLinks.map((text) => {
+            {footerLinks.map((text, index) => {
               return (
-                <a className={styles["footer-link"]} href={"/"}>
+                <a className={styles["footer-link"]} href={"/"} key={index}>
                   {text}
                 </a>
               )

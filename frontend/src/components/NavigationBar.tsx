@@ -101,14 +101,20 @@ const NavigationBar = (props: NavigationBarProps) => {
     <nav className={styles["navigation-bar"]}>
       <div className={styles["navigation-bar-content"]}>
         <div className={styles["navigation-bar-left"]}>
-          {navigationItems.map((navItem) => {
+          {navigationItems.map((navItem, index) => {
             return (
-              <div className={styles["navigation-item-container"]}>
+              <div className={styles["navigation-item-container"]} key={index}>
                 <NavItem title={navItem.title} href={navItem.href} />
                 {navItem.dropdownItems && (
                   <DropdownMenu parentTitle={navItem.title}>
-                    {navItem.dropdownItems.map((dropdownItem) => {
-                      return <DropdownItem title={dropdownItem.title} href={dropdownItem.href} />
+                    {navItem.dropdownItems.map((dropdownItem, index) => {
+                      return (
+                        <DropdownItem
+                          title={dropdownItem.title}
+                          href={dropdownItem.href}
+                          key={index}
+                        />
+                      )
                     })}
                   </DropdownMenu>
                 )}

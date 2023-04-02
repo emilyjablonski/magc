@@ -46,12 +46,12 @@ export default function Home() {
         <PageContent>
           <div className={styles["home-quote"]}>
             <p className={styles["home-quote-text"]}>
-              "Genetic counseling is a critically important component of the appropriate use and
-              integration of genetic tests and services"
+              &quot;Genetic counseling is a critically important component of the appropriate use
+              and integration of genetic tests and services&quot;
             </p>
             <p className={styles["home-source"]}>
-              ---- Report of the Secretary's Advisory Committee on Genetics, Health, and Society,
-              2006
+              ---- Report of the Secretary&apos;s Advisory Committee on Genetics, Health, and
+              Society, 2006
             </p>
           </div>
 
@@ -64,12 +64,12 @@ export default function Home() {
             advocate of quality genetic counseling services in Michigan.
           </p>
           <div className={styles["news-container"]}>
-            {newsPosts?.map((post) => {
+            {newsPosts?.map((post, index) => {
               return (
-                <span className={styles["news-item"]}>
+                <span className={styles["news-item"]} key={index}>
                   <h2>{post.attributes.title}</h2>
                   <p>
-                    <ReactMarkdown children={post.attributes.content} />
+                    <ReactMarkdown>{post.attributes.content}</ReactMarkdown>
                   </p>
                 </span>
               )
