@@ -2,7 +2,7 @@
   "name": "magc",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "MAGC Backend",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
@@ -27,7 +27,7 @@
     "semi": false
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Emily Jablonski"
   },
   "strapi": {
     "uuid": "72ed878b-52d7-4e55-a06e-70093c75579a"

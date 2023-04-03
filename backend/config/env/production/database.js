@@ -14,5 +14,6 @@ module.exports = ({ env }) => ({
       },
     },
     debug: false,
+    acquireConnectionTimeout: 300000,
   },
 })
