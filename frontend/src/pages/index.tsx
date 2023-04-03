@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     const getNewsPosts = async () => {
-      const data = await axios.get("http://localhost:1337/api/news-posts")
+      const data = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/news-posts`)
       setNewsPosts(data.data.data)
     }
     getNewsPosts()
