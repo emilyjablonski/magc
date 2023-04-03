@@ -4,8 +4,8 @@ module.exports = ({ env }) => {
   const { host, port, database, user, password } = parse(env("DATABASE_URL"))
 
   return {
-    client: "postgres",
     connection: {
+      client: "postgres",
       connection: {
         host,
         port,
