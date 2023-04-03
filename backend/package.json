@@ -10,15 +10,16 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "prettier": "^2.8.7",
     "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4"
+    "eslint-config-next": "13.2.4",
+    "prettier": "^2.8.7"
   },
   "dependencies": {
-    "@strapi/strapi": "4.9.0",
-    "@strapi/plugin-users-permissions": "4.9.0",
     "@strapi/plugin-i18n": "4.9.0",
-    "pg": "8.8.0"
+    "@strapi/plugin-users-permissions": "4.9.0",
+    "@strapi/strapi": "4.9.0",
+    "pg": "8.8.0",
+    "pg-connection-string": "^2.5.0"
   },
   "prettier": {
     "singleQuote": false,
